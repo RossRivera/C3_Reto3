@@ -1,0 +1,13 @@
+package ciclo3reto3.CReto3;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class CReto3ApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
