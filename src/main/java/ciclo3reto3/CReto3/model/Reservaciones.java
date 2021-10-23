@@ -24,7 +24,7 @@ public class Reservaciones {
     @ManyToOne
     @JoinColumn(name = "id")
     @JsonIgnoreProperties("reservations")
-    private Finca finca;
+    private Farm finca;
 
     @ManyToOne
     @JoinColumn(name = "idClient")
@@ -65,11 +65,11 @@ public class Reservaciones {
         this.status = status;
     }
 
-    public Finca getFinca() {
+    public Farm getFinca() {
         return finca;
     }
 
-    public void setFinca(Finca finca) {
+    public void setFinca(Farm finca) {
         this.finca = finca;
     }
 

@@ -2,7 +2,7 @@
 package ciclo3reto3.CReto3.web;
 
 import ciclo3reto3.CReto3.service.ServiciosFinca;
-import ciclo3reto3.CReto3.model.Finca;
+import ciclo3reto3.CReto3.model.Farm;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,23 +27,23 @@ public class ControladorFinca {
     private ServiciosFinca servicio;
     
     @GetMapping("/all")
-    public List<Finca> getFincas(){
+    public List<Farm> getFincas(){
         return servicio.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Finca> getFincas(@PathVariable("id") int fincaId) {
+    public Optional<Farm> getFincas(@PathVariable("id") int fincaId) {
         return servicio.getFincas(fincaId);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Finca save(@RequestBody Finca finca) {
+    public Farm save(@RequestBody Farm finca) {
         return servicio.save(finca);
     }
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public Finca update(@RequestBody Finca finca) {
+    public Farm update(@RequestBody Farm finca) {
         return servicio.update(finca);
     }
 

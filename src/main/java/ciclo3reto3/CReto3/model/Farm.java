@@ -16,15 +16,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "finca")
-public class Finca implements Serializable{
+public class Farm implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+     private String name;
     private String address;
-    private Integer exension;
+    private Integer extension;
     private Integer category_id;
-    private String name;
-    
+       
     @ManyToOne
     @JoinColumn(name = "category")
     @JsonIgnoreProperties("finca")
@@ -54,12 +54,12 @@ public class Finca implements Serializable{
         this.address = address;
     }
 
-    public Integer getExension() {
-        return exension;
+    public Integer getExtension() {
+        return extension;
     }
 
-    public void setExension(Integer exension) {
-        this.exension = exension;
+    public void setExtension(Integer extension) {
+        this.extension = extension;
     }
 
     public Integer getCategory_id() {

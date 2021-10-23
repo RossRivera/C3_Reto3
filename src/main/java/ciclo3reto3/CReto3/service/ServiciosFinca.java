@@ -1,7 +1,7 @@
 package ciclo3reto3.CReto3.service;
 
 import ciclo3reto3.CReto3.repository.RepositorioFinca;
-import ciclo3reto3.CReto3.model.Finca;
+import ciclo3reto3.CReto3.model.Farm;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,19 +12,19 @@ public class ServiciosFinca {
     @Autowired
     private RepositorioFinca metodosCrud;
 
-    public List<Finca> getAll(){
+    public List<Farm> getAll(){
         return metodosCrud.getAll();
     }
 
-    public Optional<Finca> getFincas(int fincaId) {
+    public Optional<Farm> getFincas(int fincaId) {
         return metodosCrud.getFinca(fincaId);
     }
 
-    public Finca save(Finca finca){
+    public Farm save(Farm finca){
         if(finca.getId()==null){
             return metodosCrud.save(finca);
         }else{
-            Optional<Finca> e=metodosCrud.getFinca(finca.getId());
+            Optional<Farm> e=metodosCrud.getFinca(finca.getId());
             if(e.isEmpty()){
                 return metodosCrud.save(finca);
             }else{
@@ -33,15 +33,15 @@ public class ServiciosFinca {
         }
     }
 
-    public Finca update(Finca finca){
+    public Farm update(Farm finca){
         if(finca.getId()!=null){
-            Optional<Finca> e=metodosCrud.getFinca(finca.getId());
+            Optional<Farm> e=metodosCrud.getFinca(finca.getId());
             if(!e.isEmpty()){
                 if(finca.getAddress()!=null){
                     e.get().setAddress(finca.getAddress());
                 }
-                if(finca.getExension()!=null){
-                    e.get().setExension(finca.getExension());
+                if(finca.getExtension()!=null){
+                    e.get().setExtension(finca.getExtension());
                 }
                 if(finca.getCategory_id()!=null){
                     e.get().setCategory_id(finca.getCategory_id());
